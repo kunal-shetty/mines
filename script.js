@@ -100,6 +100,6 @@ function cashOut() {
 
 function toggleHardMode() {
     hardMode = !hardMode;
-    multiplier = hardMode ? 5 : 1.1; // Increase multiplier in hard mode
+    multiplier = hardMode ? 2 : 1.1; // Increase multiplier in hard mode
     document.getElementById('message').innerText = hardMode ? "Hard Mode ON!" : "Hard Mode OFF!";
 }
