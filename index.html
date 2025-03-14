@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mines Gambling Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mines Gambling Game</h1>
+    <label for="betAmount">Enter Bet Amount: $</label>
+    <input type="number" id="betAmount" min="1" value="10">
+    <button onclick="startGame()">Start Game</button>
+    <button onclick="cashOut()">Cash Out</button>
+    <button onclick="toggleHardMode()">Toggle Hard Mode</button>
+    <h2>Balance: $<span id="balance">100</span></h2>
+    <h2>Current Winnings: $<span id="winnings">0</span></h2>
+    <p class="message" id="message"></p>
+    <div id="gameBoard"></div>
+    
+    <audio id="safeSound" src="audio/safeTile.wav"></audio>
+    <audio id="mineSound" src="audio/mineTile.wav"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
