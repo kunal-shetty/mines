@@ -123,7 +123,7 @@ function hehe() {
 function checkWinCondition() {
     const allSafeRevealed = board.every((tile, index) => tile === 'M' || revealed[index]);
     if (allSafeRevealed) {
-        setTimeout(() => alert("Congratulations! You revealed all safe tiles!"), 10000);
+        setTimeout(() => alert("Congratulations! You revealed all safe tiles!"), 1000);
     }
 }
 
