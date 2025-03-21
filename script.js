@@ -32,6 +32,7 @@ function startGame() {
 
     placeMines();
     renderBoard();
+    checkWinCondition(); 
 }
 
 function placeMines() {
@@ -81,6 +82,7 @@ function revealTile(index, div) {
         gameActive = false;
     } else {
         div.className = 'tile safe';
+        div.innerText = '💎';
         playSound("safeSound");
         winnings *= multiplier;
         document.getElementById('winnings').innerText = winnings.toFixed(2);
@@ -100,6 +102,28 @@ function cashOut() {
 
 function toggleHardMode() {
     hardMode = !hardMode;
-    multiplier = hardMode ? 2 : 1.1; // Increase multiplier in hard mode
+    multiplier = hardMode ? 5 : 1.1; // Increase multiplier in hard mode
     document.getElementById('message').innerText = hardMode ? "Hard Mode ON!" : "Hard Mode OFF!";
 }
+
+function hehe() {
+    if (!gameActive) return;
+
+    board.forEach((tile, index) => {
+        if (tile === 'M') {
+            const div = document.getElementById('gameBoard').children[index];
+            div.className = 'tile mine';
+            div.innerText = '💣';
+        }
+    });
+
+    checkWinCondition(); 
+}
+
+function checkWinCondition() {
+    const allSafeRevealed = board.every((tile, index) => tile === 'M' || revealed[index]);
+    if (allSafeRevealed) {
+        setTimeout(() => alert("Congratulations! You revealed all safe tiles!"), 10000);
+    }
+}
+

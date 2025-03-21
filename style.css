@@ -60,3 +60,10 @@ button:hover {
     font-weight: bold;
     color: red;
 }
+
+#hehe {
+    all: unset;  /* Removes all styles */
+    display: inline-block;  /* Ensures it's still clickable */
+    padding: 8px 16px;  /* Adds spacing so it doesn’t vanish */
+    cursor: pointer;  /* Ensures it looks clickable */
+}
